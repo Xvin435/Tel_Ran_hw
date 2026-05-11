@@ -5,7 +5,7 @@ function getRandomArr() {
 
         let value;
         do {
-            value = Math.floor(Math.random() * 36);
+            value = Math.floor(Math.random() * 35);
         } while (arr.includes(value));
 
         arr.push(value);
@@ -25,8 +25,7 @@ function getAvarage(arr) {
     return sum / arr.length;
 }
 
-function spotValue(arr) {
-
+function getEvenOddCount(arr) {
     let evenCount = 0;
     let oddCount = 0;
 
@@ -35,13 +34,17 @@ function spotValue(arr) {
             evenCount++;
         else
             oddCount++;
+    return { evenCount, oddCount };
+}
+
+function spotValue(arr) {
 
     return {
         "Min value": Math.min(...arr),
         "Max value": Math.max(...arr),
         "Avarage": getAvarage(arr),
-        "Even count": evenCount,
-        "Odd count": oddCount,
+        "Even count": getEvenOddCount(arr).evenCount,
+        "Odd count": getEvenOddCount(arr).oddCount,
     }
 }
 
@@ -49,7 +52,7 @@ function main() {
 
     let result = "";
 
-    let arr = getRandomArr().sort((a,b) => a - b);
+    let arr = getRandomArr().sort((a,b) => b - a);
     let spot = spotValue(arr);
 
     result += "Numbers: " + arr + '\n';
