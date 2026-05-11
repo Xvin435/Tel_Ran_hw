@@ -37,11 +37,6 @@ class Employee {
 
 class Company{
     #employees=[];
-    hireEmployee(employee){}
-    fireEmployee(id){}
-    getAllEmployee(){}
-    getTotalSalary(){}
-    getEmployeeMinSalary(){}
 
     hireEmployee(employee) {
         if (employee instanceof Employee) {
@@ -50,11 +45,19 @@ class Company{
     }
 
     fireEmployee(id) {
+        let temp = 0;
+        for (let i = 0; i < this.#employees.length; i++)
+            if (this.#employees[i].getId() === id)
+                temp++;
+
+        if (temp > 1)
+            throw new Error(temp + " Employees with the same id");
+
         this.#employees = this.#employees.filter(employee => employee.getId() !== id);
     }
 
     getAllEmployee() {
-        return this.#employees;
+        return [...this.#employees];
     }
 
     getTotalSalary() {
