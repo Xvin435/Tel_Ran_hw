@@ -4,8 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    test
+
+    <div id="content">
+
+        <div id="createCompanyDiv">
+
+            <h1 class="greatH1">
+                Create Company </h1>
+
+            <input type="text" id="companyNameInput" placeholder="Company Name">
+
+            <button id="createCompanyButton">Create Company</button>
+
+        </div>
+
+        <div id="employeeManagerDiv">
+
+            <div id="header" class="greatH1" style="font-size: 20px;">
+                <h1>
+                    Welcome to <span id="companyName">Company name</span> company!</h1>
+
+            </div>
+
+            <div id="searchBar">
+
+                <h2 class="greatH1" style="font-size: 32px;">Search</h2>
+                <input type="text" id="employeeNameSearchInput" placeholder="Search by Name">
+                <input type="text" id="employeeTitleSearchInput" placeholder="Search by Title">
+                <input type="number" id="employeeSalarySearchInput" min="0" placeholder="Search by Salary">
+                <input type="number" id="employeeIdSearchInput" placeholder="Search by ID">
+            </div>
+
+            <div id="employeeList">
+                <table id="employeeTable">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="employeeTableBody">
+
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div id="employeeControls" style="margin-top: 20px;">
+
+                <div class="controlRaw">
+
+                    <button id="addEmployeeButton">Add</button>
+                    <input type="text" id="employeeNameInput" placeholder="Employee Name">
+                    <input type="text" id="employeeTitleInput" placeholder="Employee Title">
+                    <input type="number" id="employeeSalaryInput" min="0" placeholder="Employee Salary">
+                </div>
+                <div class="controlRaw">
+
+                    <button id="removeEmployeeButton">Remove</button>
+                    <input type="number" id="employeeIdToRemoveInput" placeholder="Employee ID to Remove">
+                </div>
+                <div class="controlRaw" style="margin-bottom: 20px;">
+
+                    <button id="updateEmployeeButton">Update</button>
+                    <input type="number" id="employeeIdToUpdateInput" placeholder="Employee ID to Update">
+                    <input type="text" id="employeeNameToUpdateInput" placeholder="New Employee Name">
+                    <input type="text" id="employeeTitleToUpdateInput" placeholder="New Employee Title">
+                    <input type="number" id="employeeSalaryToUpdateInput" min="0" placeholder="New Employee Salary">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,124 @@
+body{
+    background-color:rgb(87, 59, 59);
+    margin: 0;
+}
+input {
+    outline: none;
+}
+#content {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 80%;
+    min-height: 120vh;
+    margin: 0 auto;
+    background-color: whitesmoke;
+
+}
+#createCompanyDiv {
+    padding: 0px;
+    width: 300px;
+    margin: 40px auto;
+}
+.greatH1 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 64px;
+    color: rgb(87, 59, 59);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+#createCompanyDiv input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+#createCompanyDiv button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: rgb(87, 59, 59);
+    color: white;
+    border: 1px solid rgb(87, 59, 59);
+    cursor: pointer;
+}
+#createCompanyDiv button:hover {
+    background-color: transparent;
+    color: rgb(87, 59, 59);
+}
+#employeeTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+    font-family: sans-serif;
+}
+
+#employeeTable thead {
+    background-color: rgb(87, 59, 59);
+    color: white;
+}
+
+#employeeTable th,
+#employeeTable td {
+    border: 1px solid rgb(87, 59, 59);
+    padding: 10px;
+    text-align: center;
+}
+
+#employeeTable tbody tr:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+#employeeList {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+#employeeControls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#employeeControls button {
+    padding: 10px 20px;
+    background-color: rgb(87, 59, 59);
+    color: white;
+    border: 1px solid rgb(87, 59, 59);
+    cursor: pointer;
+}
+
+#employeeControls button:hover {
+    background-color: transparent;
+    color: rgb(87, 59, 59);
+}
+
+#employeeControls input {
+    padding: 10px 50px;
+    color: brown;
+    border: 1px solid rgb(87, 59, 59);
+    cursor: pointer;
+}
+#searchBar {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchBar input {
+    padding: 10px 20px;
+    color: brown;
+    border: 1px solid rgb(87, 59, 59);
+    cursor: pointer;
+    width: 30%;
+}
+.invalidInput {
+    border: 2px solid red !important;
+    color: red !important;
+}
