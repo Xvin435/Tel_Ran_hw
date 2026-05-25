@@ -1,12 +1,12 @@
 class Employee {
     #id;
     #name="Anonymous";
-    title;
+    #title;
     #salary;
     constructor(name,title, salary) {
         this.#id= undefined;
         this.setName(name);
-        this.title=title;
+        this.setTitle(title);
         this.setSalary(salary);
     }
     setName(name) {
@@ -140,6 +140,10 @@ class Application {
 
         let createCompanyButton = document.getElementById("createCompanyButton");
         createCompanyButton.addEventListener("click", () => {
+            if (!this.regexTest(document.getElementById("companyNameInput").value)) {
+                this.showInvalidInput(document.getElementById("companyNameInput"), "Invalid Company Name!");
+                return;
+            }
             let companyNameInput = document.getElementById("companyNameInput");
             this.onCompanyInit(companyNameInput.value);
         });
@@ -200,7 +204,7 @@ class Application {
         }
         let employeeSalaryInput = document.getElementById("employeeSalaryInput");
         let salary = parseFloat(employeeSalaryInput.value);
-        if (isNaN(salary)) {
+        if (isNaN(salary) || salary < 0) {
             this.showInvalidInput(employeeSalaryInput, "Invalid Salary!");
             isValid = false;
         }
@@ -263,7 +267,7 @@ class Application {
             let newTitle = employeeTitleToUpdateInput.value.trim() || employee.getTitle();
             let newSalary = parseFloat(employeeSalaryToUpdateInput.value);
 
-            if (isNaN(newSalary)) newSalary = employee.getSalary();
+            if (isNaN(newSalary) || newSalary < 0) newSalary = employee.getSalary();
 
             this.#company.updateEmployee(id, newName, newTitle, newSalary);
             this.updateTable();
@@ -316,14 +320,14 @@ class Application {
         input.classList.add("invalidInput");
         input.value = "";
         input.placeholder = message;
-        input.addEventListener("input", () => {
+        input.oninput = () => {
             input.classList.remove("invalidInput");
             input.placeholder = originalPlaceholder;
-        });
+        };
     }
 
     regexTest(value) {
-        let regex = /^[a-zA-Zа-яА-Я\s]+$/;
+        let regex = /^[a-zA-ZÐ°-ÑÐ-Ð¯\s]+$/;
         return regex.test(value);
     }
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 
@@ -31,11 +31,26 @@
 
             <div id="searchBar">
 
-                <h2 class="greatH1" style="font-size: 32px;">Search</h2>
-                <input type="text" id="employeeNameSearchInput" placeholder="Search by Name">
-                <input type="text" id="employeeTitleSearchInput" placeholder="Search by Title">
-                <input type="number" id="employeeSalarySearchInput" min="0" placeholder="Search by Salary">
-                <input type="number" id="employeeIdSearchInput" placeholder="Search by ID">
+                <h2 class="greatH1">Search Employee</h2>
+
+                <div class="searchBox">
+
+                    <input
+                        type="text"
+                        id="employeeSearchInput"
+                        placeholder="Search employee..."
+                    >
+
+                    <select id="searchType">
+                        <option value="global">Global</option>
+                        <option value="name">Name</option>
+                        <option value="title">Title</option>
+                        <option value="salary">Salary</option>
+                        <option value="id">ID</option>
+                    </select>
+
+                </div>
+
             </div>
 
             <div id="employeeList">
@@ -64,28 +79,71 @@
                 </table>
             </div>
 
-            <div id="employeeControls" style="margin-top: 20px;">
+           <div id="employeeControls">
 
-                <div class="controlRaw">
+                <div class="employeeCard">
 
-                    <button id="addEmployeeButton">Add</button>
-                    <input type="text" id="employeeNameInput" placeholder="Employee Name">
-                    <input type="text" id="employeeTitleInput" placeholder="Employee Title">
-                    <input type="number" id="employeeSalaryInput" min="0" placeholder="Employee Salary">
+                    <h3>Employee Editor</h3>
+
+                    <input
+                        type="number"
+                        id="employeeIdInput"
+                        placeholder="ID not required"
+                        disabled
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="Employee Name"
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="Employee Title"
+                    >
+
+                    <input
+                        type="number"
+                        placeholder="Employee Salary"
+                    >
+
+                    <div class="actionRow">
+
+                        <select id="employeeAction">
+
+                            <option value="add">
+                                Add
+                            </option>
+
+                            <option value="update">
+                                Update
+                            </option>
+
+                        </select>
+
+                        <button id="employeeSubmitButton">
+                            Submit
+                        </button>
+
+                    </div>
+
                 </div>
-                <div class="controlRaw">
 
-                    <button id="removeEmployeeButton">Remove</button>
-                    <input type="number" id="employeeIdToRemoveInput" placeholder="Employee ID to Remove">
-                </div>
-                <div class="controlRaw" style="margin-bottom: 20px;">
+                <div class="employeeCard">
 
-                    <button id="updateEmployeeButton">Update</button>
-                    <input type="number" id="employeeIdToUpdateInput" placeholder="Employee ID to Update">
-                    <input type="text" id="employeeNameToUpdateInput" placeholder="New Employee Name">
-                    <input type="text" id="employeeTitleToUpdateInput" placeholder="New Employee Title">
-                    <input type="number" id="employeeSalaryToUpdateInput" min="0" placeholder="New Employee Salary">
+                    <h3>Remove Employee</h3>
+
+                    <input
+                        type="number"
+                        placeholder="Employee ID"
+                    >
+
+                    <button id="removeEmployeeButton">
+                        Remove
+                    </button>
+
                 </div>
+
             </div>
         </div>
     </div>
