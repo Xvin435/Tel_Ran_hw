@@ -333,8 +333,20 @@ class Application {
         actionRow.appendChild(this.#employeeSubmitButton);
 
         let removeCard = document.createElement("div");
-        removeCard.class = "employeeCard";
-        
+        removeCard.className = "employeeCard";
+        employeeControls.appendChild(removeCard);
+
+        let removeTitle = document.createElement("h3");
+        removeTitle.textContent = "Employee remove";
+        removeCard.appendChild(removeTitle);
+
+        this.#removeEmpIdInput = document.createElement("input");
+        this.#removeEmpIdInput.placeholder = "Employee ID";
+        removeCard.appendChild(this.#removeEmpIdInput);
+
+        this.#removeEmpButton = document.createElement("button");
+        this.#removeEmpButton.textContent = "Remove";
+        removeCard.append(this.#removeEmpButton)
     }
 
     showInvalidInput(input, message = "Invalid input") {
